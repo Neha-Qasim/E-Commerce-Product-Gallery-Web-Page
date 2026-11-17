@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    padding: 20px;
+}
+
+/* Main Grid Layout */
+
+.dashboard-container {
+    display: grid;
+
+    grid-template-columns: 240px 1fr 1fr;
+
+    grid-template-rows: 70px minmax(300px, auto) 180px 50px;
+
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "sidebar widget-a widget-b"
+        "footer footer footer";
+
+    gap: 15px;
+}
+
+/* Header */
+
+.header {
+    grid-area: header;
+    background-color: #2541B2;
+    color: white;
+    padding: 20px;
+}
+
+.header h2 {
+    display: inline;
+    margin-right: 40px;
+}
+
+.header nav {
+    display: inline;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.header a:hover {
+    color: #FFC107;
+}
+
+/* Sidebar */
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    color: #2541B2;
+    margin-bottom: 15px;
+}
+
+.sidebar li {
+    margin: 15px 0 15px 20px;
+}
+
+.sidebar h3 {
+    color: #FF5722;
+    margin-top: 30px;
+}
+
+.sidebar p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+/* Main Content */
+
+.main-content {
+    grid-area: main;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.main-content h2 {
+    color: #2541B2;
+}
+
+.intro {
+    color: gray;
+    margin: 10px 0 20px;
+}
+
+/* Product Grid */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 12px #ccc;
+}
+
+.card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.price {
+    color: #2541B2;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* Buttons */
+
+button {
+    background-color: #FF5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2541B2;
+}
+
+/* Widgets */
+
+.widget-a {
+    grid-area: widget-a;
+    background-color: #2541B2;
+    color: white;
+    padding: 20px;
+}
+
+.widget-a p {
+    margin-top: 12px;
+}
+
+.widget-b {
+    grid-area: widget-b;
+    background-color: #FFC107;
+    color: #2541B2;
+    padding: 20px;
+}
+
+.widget-b p {
+    margin: 12px 0;
+}
+
+/* Footer */
+
+.footer {
+    grid-area: footer;
+    background-color: #2541B2;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
